@@ -4,7 +4,7 @@ class Post
   def initialize(title)
     @title = title
     @author = author
-    @name = name
+    @name = author.name
   end
 
   def author_name
