@@ -8,9 +8,9 @@ class Artist
   end
 
   def add_song(song)
-    @songs << song
-    song.artist = self
     @@song_count = @@song_count + 1
+    @songs << song
+    song.artist = self #the songs artist is Artist
   end
 
   def songs
@@ -18,14 +18,18 @@ class Artist
   end
 
   def add_song_by_name(name)
+    @@song_count = @@song_count + 1
     song = Song.new(name)
     @songs << song
     song.artist = self
-    array = @songs
-    @@song_count = array.length
   end
 
   def self.song_count
     @@song_count
   end
+#  def self.song_count
+#    array = @songs
+#    array = array.size
+#    array#@@song_count = @songs
+#  end
 end
